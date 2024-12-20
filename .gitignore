@@ -1,0 +1,5 @@
+# Ignorar diretório de cache do Python
+__pycaceh__/
+
+# Ignorar configurações do IDE (IntelliJ, PyCharm, etc.)
+.idea/

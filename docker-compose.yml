@@ -1,0 +1,28 @@
+services:
+  # O serviço python_app configura e sobe o app python
+  python_app:
+    container_name: app_bug_shop
+    build:
+      context: .
+      dockerfile: app/Dockerfile
+    ports:
+      - 5001:5001
+    volumes:
+      - ./app:/app
+    command: sh -c "python /app/app.py runserver"
+    
+
+  # O serviço postgres configura e sobe o banco de dados postgres
+  postgres:
+    container_name: bug_shop_db
+    build:
+      context: .
+      dockerfile: db/Dockerfile
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: 123
+      POSTGRES_DB: bug_shop
+    ports:
+      - 5433:5432
+    volumes:
+      - ./db/dumps:/docker-entrypoint-initdb.d

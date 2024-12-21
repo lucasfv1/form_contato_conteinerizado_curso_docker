@@ -6,7 +6,7 @@ IMAGES_FOLDER = '/app/static/files/img'
 
 SECRECT_KEY = '###$$$@@@'
 
-SQLALCHEMY_DATABASE_URI = 'postgresql+psycopg2://postgres:123@postgres:5432/bug_shop'
+SQLALCHEMY_DATABASE_URI = 'postgresql+psycopg2://postgres:123@localhost:5432/bug_shop'
 
 
 # Conexão com o banco de dados
